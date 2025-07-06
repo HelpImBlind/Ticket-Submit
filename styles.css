@@ -1,0 +1,312 @@
+:root {
+    --neutral-0: hsl(0, 0%, 100%);
+    --neutral-300: hsl(252, 6%, 83%);
+    --neutral-300-a: hsla(252, 6%, 83%, 20%);
+    --neutral-500: hsl(245, 15%, 58%);
+    --neutral-500-a: hsla(245, 15%, 58%, 20%);
+    --neutral-700: hsl(245, 19%, 35%);
+    --neutral-900: hsl(248, 70%, 10%);
+    --orange-500: hsl(7, 88%, 67%);
+    --orange-700: hsl(7, 71%, 60%);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    font-family: "Inconsolata", monospace;
+    font-size: 1rem;
+}
+
+body {
+    background-color: var(--neutral-900);
+    background-image: url('assets/images/background-desktop-v3.svg');
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    opacity: 0;
+    transform: translateY(-30px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+body.body-load {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.ct_background {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+header p {
+    color: var(--neutral-300);
+    font-size: 1.23em;
+}
+
+h1 {
+    color: var(--neutral-0);
+    font-weight: 700;
+}
+
+section {
+    margin: 15px 0px;
+}
+
+/* FORM */
+
+form label {
+    color: var(--neutral-0);
+}
+
+.form_img_upload span, p {
+    color: var(--neutral-300);
+    font-size: 0.75em;
+}
+
+/* Form - Image Upload */
+
+.form_img > div {
+    border: 2px dashed var(--neutral-300);
+    background-color: var(--neutral-300-a);
+} 
+
+.form_img > div > div {
+    width: 60px;
+    height: 60px;
+} 
+
+.form_img > div > div ~ span {
+    color: var(--neutral-300);
+} 
+
+.form_img img {
+    border: 1px solid var(--neutral-300);
+    background-color: var(--neutral-500-a);
+    left: 10%;
+    top: 10%;
+    transition: 0.25s ease-in-out;
+} 
+
+.form_img input {
+    cursor: pointer;
+} 
+
+.form_img > div > div:hover img {
+    cursor: pointer;
+    background-color: var(--neutral-300);
+    opacity: 0.5;
+    transform: scale(1.1);
+} 
+
+#avatarImgPreview {
+    display: none;
+}
+
+#avatarImgPreview img {
+    border: 0;
+    padding: 10px;
+    border-radius: 10px;
+    width: 100px;
+    height: auto;
+}
+
+#avatarImgError {
+    color: var(--orange-700);
+    font-weight: 700;
+    opacity: 0;
+    max-height: 0;
+    transition: opacity 0.3s ease, max-height 0.3s ease;
+    padding: 0px 10px;
+}
+
+#avatarImgError.show {
+    display: inline-block;
+    opacity: 1;
+    /* max-height: 100px; */
+    width: 100%;
+}
+
+#avatarImgInfo::before {
+    content: '';
+    background: url('assets/images/icon-info.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100%;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: -0;
+    top: -5%;
+}
+
+.error-msg {
+    color: var(--orange-700);
+    font-weight: 700;
+    opacity: 0;
+    max-height: 0;
+    transition: opacity 0.3s ease, max-height 0.3s ease;
+  }
+  
+  .error-msg.show {
+    opacity: 1;
+    max-height: 50px;
+  }
+
+/* Custom Styles */
+
+.ct_bg_patterns_lines {
+    aspect-ratio: 1459 / 1024;
+    overflow: hidden;
+}
+
+.ct_bg_patterns_circle {
+    top: -12%;
+    left: 11%;
+}
+
+.ct_input_border {
+    border: 1px solid var(--neutral-300);
+    background-color: var(--neutral-300-a);
+    width: 100%;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+.ct_input_submit {
+    border: 1px solid var(--orange-500);
+    background-color: var(--orange-500);
+    color: var(--neutral-900);
+    font-weight: 900;
+    font-size: 1.2em;
+    width: 100%;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 5px;
+    transition: 0.25s ease-in-out;
+}
+
+.ct_input_submit:hover {
+    border: 1px solid var(--neutral-300);
+    background-color: var(--orange-300);
+    color: var(--orange-700);
+    font-weight: 900;
+    font-size: 1.2em;
+    width: 100%;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+/* Thank You Page */
+
+.ty_header h2 {
+    color: var(--neutral-300);
+}
+
+.ty_header p {
+    font-size: 0.95em;
+}
+
+#tyName {
+    background: #F37362;
+    background: linear-gradient(to right, #F37362 0%, #FFFFFF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#tyEmail {
+    color: var(--orange-500);
+}
+
+.ty_ticket {
+    background-image: url('assets/images/pattern-ticket.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    aspect-ratio: 600 / 280;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+} 
+
+.ty_ticket_details {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.ty_ticket_left {
+
+}
+
+#tyTicketImg {
+    width: 65px;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+#tyTicketName {
+    color: var(--neutral-300);
+}
+
+#tyTicketGit {
+    color: var(--neutral-500);
+}
+
+#tyTicketGit::before {
+    content: '';
+    background: url('assets/images/icon-github.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100%;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: -5%;
+    top: 10%;
+}
+
+.ty_ticket_right {
+    transform: rotate(90deg);
+    color: var(--neutral-500);
+}
+
+.modal_bg {
+    background-color: var(--neutral-900) !important;
+    background-image: url('assets/images/background-desktop.png') !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    border: 1px solid var(--neutral-300);
+}
+
+@media screen and (max-width: 1120px) {
+    body {
+       background-image: url('assets/images/background-tablet-v1.svg');
+       background-position: top center;
+       background-size: 100%; 
+    }
+}
+
+@media screen and (max-width: 599px) {
+    body {
+       background-image: url('assets/images/background-mobile-v2.svg');
+       background-position: top center;
+       background-size: 100%; 
+    }
+}

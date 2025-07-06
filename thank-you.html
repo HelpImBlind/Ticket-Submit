@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+    <title>Conference ticket generator | Frontend Mentor</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous" defer></script>
+
+    <!-- Custom CSS & JS -->
+    <link rel="stylesheet" href="styles.css">
+    <script src="index.js" defer></script>
+
+     <!-- Font Import -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+    </style>
+</head>
+<body class="d-flex flex-column align-content-center justify-content-center  position-relative vh-100 overflow-hidden">
+    <div class="position-absolute">
+        <img src="assets/images/pattern-lines.svg" width="100%" height="100%" alt="">
+    </div>
+    <div class="position-absolute ct_bg_patterns_circle">
+        <img src="assets/images/pattern-circle.svg" width="100%" height="100%" alt="">
+    </div>
+    <div class="position-absolute z-0 w-75 bottom-0">
+        <img src="assets/images/pattern-squiggly-line-bottom-desktop.svg" width="100%" alt="">
+    </div>
+    <!-- <div class="">
+        <img src="assets/images/pattern-squiggly-line-bottom-desktop.svg" width="100%" alt="">
+    </div>
+    <div class="">
+        <img src="assets/images/pattern-squiggly-line-bottom-desktop.svg" width="100%" alt="">
+    </div> -->
+    <header class="col-12 col-md-6 mx-auto p-4 text-center z-3 ty_header">
+        <img src="assets/images/logo-full.svg" alt="">
+        <h1 class="mt-4">
+            Congrats, <span id="tyName">nghgdbbdb</span> your ticket is ready!
+        </h1>
+        <p>
+            We emailed your ticked to <span id="tyEmail">fbdf</span> and will send updates in the run up to the event.
+        </p>
+    </header>
+    <main class="col-12 col-sm-8 col-xl-5 mx-auto px-4 ty_main">
+        <section class="ty_header">
+            <img src="assets/images/logo-full.svg" alt="">
+            <h1 class="mt-4">
+                eady!
+            </h1>
+            <p>
+                We emailed your ticked to <span id="tyEmail">fbdf</span> and will send updates in the run up to the event.
+            </p>
+        </section>
+        <section class="ty_ticket">
+            <div class="ty_ticket_details">
+                <div class="ty_ticket_left d-flex flex-column justify-content-evenly gap-2">
+                    <div class=" ty_heading">
+                        <img src="assets/images/logo-full.svg"  alt="">
+                        <p class="py-1 ps-5">Jan 31, 2025 / Austin, TX</p>
+                    </div>
+                    <div class="d-flex flex-row align-items-center ty_avatar">
+                        <img src="assets/images/image-avatar.jpg" alt="" id="tyTicketImg">
+                        <div>
+                            <span id="tyTicketName">Name</span>
+                            <br>
+                            <span id="tyTicketGit">text</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="ty_ticket_right fs-2">
+                    <span>bgfbdbd</span>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

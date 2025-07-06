@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+    <title>Conference ticket generator | Frontend Mentor</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous" defer></script>
+    <!-- Custom CSS & JS -->
+    <link rel="stylesheet" href="styles.css">
+    <script src="index.js" defer></script>
+     <!-- Font Import -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+    </style>
+</head>
+<body>
+    <!-- <img src="assets/images/background-desktop-v3.svg" alt="" class="ct_background"> -->
+    <header class="col-12 col-md-8 mx-auto p-4 text-center">
+        <img src="assets/images/logo-full.svg" alt="">
+        <h1 class="mt-4">
+            Your Journey to Coding Conf 2025 Starts Here!
+        </h1>
+        <p>
+            Secure your spot at next year's biggest coding conference.
+        </p>
+    </header>
+    <main class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-4 mx-auto px-4">
+        <form>
+            <!-- Image -->
+            <section class="form_img d-flex flex-column gap-1">
+                <label for="avatarImg" >Upload Avatar</label>
+                <div class="text-center rounded-4 w-100 py-2">
+                    <div class="d-flex justify-content-center position-relative my-4 mx-auto overflow-hidden">
+                        <img src="assets/images/icon-upload.svg" alt="" class="position-absolute rounded-2 p-2">
+                        <input type="file" id="avatarImg" name="avatarImg" required class="opacity-0">
+                    </div>
+                    <span id="avatarImgPreview" class="mb-4"><img src="" alt=""></span>
+                    <div id="avatarImgError">Please make sure your image is <u>500KB or less</u> & is <u>JPG or PNG</u>.</div>
+                    <span class="d-block"> Drag and drop or click to upload</span> 
+                </div>
+                <p class="position-relative ps-4">
+                    <span id="avatarImgInfo"></span>Upload your photo (JPG or PNG, max size: 500KB).
+                </p> 
+            </section>
+            <!-- Name -->
+            <section>
+                <label for="avatarName">Full Name</label><br>
+                <input type="text" name="avatarName" id="avatarName" required placeholder="Jason Bourne" class="ct_input_border">
+            </section>
+            <!-- Email -->
+            <section>
+                <label for="avatarEmail">Email Address</label><br>
+                <input type="email" name="avatarEmail" id="avatarEmail" required placeholder="example@email.com" class="ct_input_border">
+                <div id="avatarEmailError" class="error-msg">Please enter a valid email address.</div>
+            </section>
+            <!-- GitHub UserName -->
+            <section>
+                <label for="avatarGit">Full Name</label><br>
+                <input type="text" name="avatarGit" id="avatarGit" required placeholder="@yourusername" class="ct_input_border">
+                <div id="avatarGitError" class="error-msg">GitHub handle must start with <u>'@'</u>.</div>
+            </section>
+            <!-- Submit -->
+            <section>
+                <input type="submit" name="avatarSubmit" id="avatarSubmit" value="Generate My Ticket" required class="ct_input_submit my-3">
+            </section>
+        </form>
+        <section class="z-3">
+            <!-- Modal -->
+            <div class="modal fade " id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content modal_bg">
+                        <div class="modal-header border-0">
+                        <button type="button" class="btn-close bg-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <section class="ty_header">
+                                <img src="assets/images/logo-full.svg" alt="">
+                                <h2 class="mt-4 fw-bold">
+                                    Congrats, <span id="tyName"></span> your ticket is ready!
+                                </h2>
+                                <p>
+                                    We emailed your ticked to <span id="tyEmail"></span> and will send updates in the run up to the event.
+                                </p>
+                            </section>
+                            <section class="ty_ticket">
+                                <div class="ty_ticket_details">
+                                    <div class="ty_ticket_left d-flex flex-column justify-content-evenly gap-2 gap-sm-4">
+                                        <div class=" ty_heading">
+                                            <img src="assets/images/logo-full.svg"  alt="" class="col-7 col-sm-12">
+                                            <p class="py-1 ps-0 ps-sm-5">Jan 31, 2025 / Austin, TX</p>
+                                        </div>
+                                        <div class="d-flex flex-row align-items-center ty_avatar">
+                                            <img src="assets/images/image-avatar.jpg" alt="" id="tyTicketImg">
+                                            <div>
+                                                <span id="tyTicketName"></span>
+                                                <br>
+                                                <div class="position-relative d-flex flex-row align-content-center">
+                                                   <span id="tyTicketGit" class="ps-3"></span> 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ty_ticket_right fs-2">
+                                        <span id="tyTicketNumber" class="ps-2"></span>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
